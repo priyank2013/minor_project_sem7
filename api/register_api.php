@@ -11,34 +11,7 @@ $name=$request->name;
 $ph=$request->ph;
 $email=$request->email;
 $pwd=$request->pwd;
-//$type=$request->typeuser;    
 
-// checking for blank values.
-if (empty($username))
-  $errors['username'] = 'Username is required.';
-
-if (empty($name))
-  $errors['name'] = 'Name is required.';
-
-if (empty($ph))
-  $errors['ph'] = 'Phone is required.';
-
-if (empty($email))
-  $errors['email'] = 'Email is required.';
-
-
-if (empty($pwd))
-  $errors['pwd'] = 'Password is required.';
-
-
-
-
-// response back.
-
-
-
-
-//$mysqli=new mysqli('localhost','root','sagar','medical');
 require_once 'connection.php';
 $mysqli=new mysqli($localhost,$user,$password,$db);
 
@@ -48,20 +21,12 @@ if($mysqli->connect_error > 0){
 	
 }
 else{
-    $queryDetail=NULL;
-    $queryLogin=NULL;
-      //  $_SESSION['user']='client';
-    $queryDetail="insert into registration values('$username','$name','$ph','$email','$pwd') ";
-    //$queryLogin="insert into client_login values('$username','$pwd')";
-    
-    
-    //$data['session']=$_SESSION['user'];
-   try{
+    $queryDetail="insert into registration values('$username','$name','$ph','$email','$pwd')";
 
-       $mysqli->autocommit(FALSE);
-       $query=$mysqli->query($queryDetail);
-          
-     //  $query1=$mysqli->query($queryLogin);
+  
+$mysqli->autocommit(FALSE); 
+$query=$mysqli->query($queryDetail);
+    try{      
     if($query == true ){
 
         

@@ -6,6 +6,10 @@ demoApp.config(function($routeProvider) {
     $routeProvider
         .when('/',{
         controller: 'home',
+        templateUrl:'app/views/story.html'
+        })
+        .when('/views',{
+        controller: 'home',
         templateUrl:'app/views/home.html'
         })
          .when('/login',{
