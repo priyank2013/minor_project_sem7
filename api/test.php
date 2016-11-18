@@ -14,19 +14,10 @@ $pwd=$request->pwd;
 require_once 'connection.php';
 $mysqli=new mysqli($localhost,$user,$password,$db);
 
-if($mysqli->connect_error > 0){
-	
-	$errors['con'] ='Connection error';
-	
-}
- $queryDetail="insert into registration values('usern1ame','name','ph','email','pwd')";
+ $queryDetail="insert into registration values('username','name','990','email','pwd')";
 $mysqli->autocommit(FALSE); 
 $query=$mysqli->query($queryDetail);
 if($query == true ){
-
-        
-        
-
         echo "Registered successfully";
             
     }else{

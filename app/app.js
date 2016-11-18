@@ -28,6 +28,10 @@ demoApp.config(function($routeProvider) {
         controller: '',
         templateUrl: 'app/views/about_us.html'
         })
+        .when('/addstory',{
+        controller: '',
+        templateUrl: 'app/views/add_story.html'
+        })
         .when('/tour',{
         controller: '',
         templateUrl: 'app/views/tour.html'
