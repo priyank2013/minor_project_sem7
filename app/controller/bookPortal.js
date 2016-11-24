@@ -76,6 +76,7 @@
                 }
 
             }).success(function(data) {
+                console.log("bbbb");
                 if (!data.success) {
                     console.log("unsucessful");
                     // Showing errors.
@@ -99,12 +100,33 @@
                     //window.location.href = path
                 }
             });
-
-
-
-
         }
 
+          $scope.submitFormStory = function() {
+              $http({
+
+                method: 'POST',
+                url: 'api/saveStory.php',
+                data: $scope.reg,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+
+            }).success(function(data) {
+                if (!data.success) {
+                    console.log("unsucessful");
+                    // Showing errors.
+                    $scope.errorName = data.errors.name;
+                    $scope.errorException = data.errors.exception;
+
+                    $scope.message = "";
+                } else {
+                    console.log("sucessful");
+                    $scope.message = data.message;
+                    
+                }
+            });
+        }
 
 
     }

@@ -1,6 +1,9 @@
-<div ng-controller="story_controller">
-<div class="col-md-3" ng-repeat="x in story ">
-    title:{{x.title}}
-    story:{{x.story}}
+
+<div class="row jumbotron" style="min-width:80%;padding:10px;background-color:white;width: 40% ;margin-left: auto;margin-right: auto;margin-top:5%;margin-bottom: 5%;">
+   <div ng-controller="story_controller">
+<div  ng-repeat="x in story ">
+    <h3 class="page-header"> <b>Title: </b><i>{{x.title}}</i></h3>
+    <h4> <b>story: </b><i> {{x.story}} </i></h4><br>
 </div>
 </div>
+  </div>
