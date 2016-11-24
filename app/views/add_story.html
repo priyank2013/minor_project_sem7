@@ -1,4 +1,36 @@
-<div>
-    title : <div></div>
-    body : <div></div>
-</div>
+<div class="row jumbotron" style="min-width:80%;padding:10px;background-color:white;width: 40% ;margin-left: auto;margin-right: auto;margin-top:5%;margin-bottom: 5%;">
+    <div id="messages" class="well" data-ng-show="message">{{ message }}</div>
+    <form role="form" id="usrform"data-ng-submit="submitFormReg()" method="post">
+
+        <table class="table">
+            <caption>Add Story</caption>
+            <tr>
+                <td>
+                    <label for="user_name">Title</label>
+                </td>
+                <td>
+                    <input type="text" placeholder="Enter Title" name="user_name" data-ng-model="reg.user_name" class="form-control" value="" required/> </td>
+            </tr >
+            <tr>
+            <td>
+                <label for="name">Story</label>
+            </td>
+            <td>
+                    <textarea name="styled-textarea" form="usrform" id="styled" onfocus=" rows = '30'; setbg('#e5fff3');" placeholder="Enter Story here..."></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Add Story" class="btn btn-primary form-control" href="#/doctorpanel" target="_blank" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <span data-ng-show="errorException">{{ errorException }}</span>
+    <span data-ng-show="errorUserName">{{ errorUserName }}</span>
+    <span data-ng-show="errorName">{{ errorName }}</span>
+    <span data-ng-show="errorPh">{{ errorPh }}</span>
+    <span data-ng-show="errorEmail">{{ errorEmail }}</span>
+    <span data-ng-show="errorPwd">{{ errorPwd }}</span>
+    <span data-ng-show="errorType">{{ errorType }}</span>
+    <span data-ng-show="errorCon">{{ errorCon }}</span>
+  </div>

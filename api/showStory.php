@@ -17,18 +17,20 @@ if($mysqli->connect_error > 0){
 }else{
     
     $result=$mysqli->query($qry);
-    print_r($result);
+    //print_r($result);
     if($result == true){
-        $row=$result->fetch_array(MYSQLI_NUM);
-        print_r($row);
+        //$row=$result->fetch_array(MYSQLI_NUM);
+        //print_r($row);
         while($row=$result->fetch_array(MYSQLI_NUM)){
-echo "row";
-            print_r($row);
-            if($row)
+            //echo "row";
+           // print_r($row);
+            //if($row)
             $temp=[];
             $temp['title']=$row[0];
-            $temp['story']==$row[1];
-            $data.push_back($temp);
+            $temp['story']=$row[1];
+           //echo $temp['story'];
+            array_push($data,$temp);
+            //$data.push_back($temp);
         }
 
 
@@ -41,6 +43,6 @@ echo "row";
     
     $mysqli->close();
 }
-echo "$data";
+//echo "$data";
 echo json_encode($data);
 ?>
