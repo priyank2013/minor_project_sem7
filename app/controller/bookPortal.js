@@ -33,7 +33,7 @@
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             }).success(function(data) {
-
+                
                 if (!data.success) {
                     console.log(data.errors.exception);
                     $scope.errorCon = data.errors.con;
@@ -63,20 +63,14 @@
         }
 
         $scope.submitFormReg = function() {
-
-
-
             $http({
-
                 method: 'POST',
                 url: 'api/register_api.php',
                 data: $scope.reg,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
-
             }).success(function(data) {
-                console.log("bbbb");
                 if (!data.success) {
                     console.log("unsucessful");
                     // Showing errors.
@@ -102,31 +96,6 @@
             });
         }
 
-          $scope.submitFormStory = function() {
-              $http({
-
-                method: 'POST',
-                url: 'api/saveStory.php',
-                data: $scope.reg,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-
-            }).success(function(data) {
-                if (!data.success) {
-                    console.log("unsucessful");
-                    // Showing errors.
-                    $scope.errorName = data.errors.name;
-                    $scope.errorException = data.errors.exception;
-
-                    $scope.message = "";
-                } else {
-                    console.log("sucessful");
-                    $scope.message = data.message;
-                    
-                }
-            });
-        }
 
 
     }

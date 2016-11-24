@@ -1,5 +1,6 @@
-<div class="row jumbotron" style="min-width:80%;padding:10px;background-color:white;width: 40% ;margin-left: auto;margin-right: auto;margin-top:5%;margin-bottom: 5%;">
-    <form role="form" id="usrform"data-ng-submit="submitFormStory()" method="post">
+<div class="row jumbotron" style="min-width:80%;padding:10px;background-color:white;width: 40% ;margin-left: auto;margin-right: auto;margin-top:5%;margin-bottom: 5%;" >
+     <div id="messages"  data-ng-show="message">{{ message }}</div>
+    <form role="form" id="usrform" data-ng-submit="submitFormStory()" method="post">
 
         <table class="table">
             <caption>Add Story</caption>

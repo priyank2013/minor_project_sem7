@@ -31,6 +31,8 @@
         });
        
     }
+    
+    
 
     story_controller.$inject = ['$scope', '$http', '$q','$localStorage'];
 

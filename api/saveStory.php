@@ -1,12 +1,12 @@
 <?php
 $errors = array();
 $data = array();
-
+echo "adding data";
 $postdata = file_get_contents('php://input');
 $request = json_decode($postdata);
 
-$title=$request->title;
-$story=$request->story;
+$title="hhjhjsd ssd";//$request->title;
+$story="GitHub is a treasure trove of some of the world ";//$request->story;
 
 
 require_once 'connection.php';
@@ -19,7 +19,6 @@ if($mysqli->connect_error > 0){
 }
 else{
     $queryDetail="insert into story values('$title','$story')";
-
   
 $mysqli->autocommit(FALSE); 
 $query=$mysqli->query($queryDetail);
