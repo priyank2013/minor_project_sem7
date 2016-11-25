@@ -5,8 +5,8 @@ echo "adding data";
 $postdata = file_get_contents('php://input');
 $request = json_decode($postdata);
 
-$title="hhjhjsd ssd";//$request->title;
-$story="GitHub is a treasure trove of some of the world ";//$request->story;
+$title=$request->title;
+$story=$request->story;
 
 
 require_once 'connection.php';
